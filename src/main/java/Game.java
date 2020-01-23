@@ -502,8 +502,10 @@ public class Game extends JFrame {
                 hP-=enemyMHP*0.1;
                 if(hP<=0){
                     Timer enemyDelayTimer = new Timer(2000, actionEvent2 -> {
-                        setCurrentStage(Stage.MENU);
+                        System.exit(0);
                     });
+                    enemyDelayTimer.start();
+                    return;
                 }
                 Timer enemyDelayTimer = new Timer(2000, actionEvent2 -> {
                     setCurrentPhase(Phase.PLAYERTURN);
